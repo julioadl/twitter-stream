@@ -1,4 +1,4 @@
-FROM dockerfile/ubuntu
+FROM library/ubuntu:14.04
 FROM python:2.7
 
 COPY /. /.

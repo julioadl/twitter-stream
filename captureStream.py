@@ -5,11 +5,11 @@ import time
 import threading
 
 #Function that calls the twitterStream
-def beginStream(keywords):
+def beginStream():
     #Activate the streaming services
     try:
         stream = t.twitterStream()
-        stream.fetchsample(keywords)
+        stream.fetchsamples()
 
     except httplib.IncompleteRead:
         pass
@@ -18,4 +18,4 @@ def beginStream(keywords):
     threading.Timer(1.0, beginStream).start()
 
 keywords = []
-beginStream(keywords)
+beginStream()

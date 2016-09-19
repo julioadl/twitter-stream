@@ -1,2 +1,3 @@
 oauth2
 httplib2==0.8
+pymongo

@@ -27,7 +27,3 @@ CMD ["mongod"]
 #   - 28017: http
 EXPOSE 27017
 EXPOSE 28017
-
-#Create MongoDB twitter
-RUN mongod
-RUN use twitter

@@ -1,4 +1,5 @@
 import json
+import pymongo
 import datetime
 import oauth2 as oauth
 import urllib2 as urllib
@@ -34,7 +35,7 @@ class twitterStream:
     req = oauth.Request.from_consumer_and_token(oauth_consumer,
                                                 token=oauth_token,
                                                 http_method=http_method,
-                                                http_url=url, 
+                                                http_url=url,
                                                 parameters=parameters)
 
     req.sign_request(signature_method_hmac_sha1, oauth_consumer, oauth_token)
@@ -57,6 +58,7 @@ class twitterStream:
 
   def fetchsamples(self, keywordList):
 
+
     keywordList = keywordList
 
     toTrack = ",".join(keywordList)
@@ -65,10 +67,9 @@ class twitterStream:
     parameters = []
     response = self.twitterreq(url, "GET", parameters)
 
-    tweets = {'tweets': []}
-    date = datetime.datetime.now().isoformat()
-    name_file = '/tweets-' + str(date) + '.txt'
-    with open(name_file, 'w') as textFile:
-        for line in response:
-            tweet = line.strip()
-            textFile.write(tweet + '\n')
+    conn = pymongo.MongoClient('mongodb://localhost:27017')
+    db = conn.twitter
+
+    for line in response:
+        tweet = line.strip()
+        db.tweets.insert(tweet)

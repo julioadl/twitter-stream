@@ -72,8 +72,4 @@ class twitterStream:
 
     for line in response:
         tweet = line.strip()
-        try:
-            tweet = json.loads(tweet)
-            db.tweets.insert(tweet)
-        except:
-            pass
+        db.tweets.insert(tweet)

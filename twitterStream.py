@@ -14,11 +14,11 @@ class twitterStream:
 
   def twitterreq(self, url, method, parameters):
 
-    access_token_key = "589408945-MUbg17aThZY2jxVgTDRZrTI4tMizGTeKqUDC54ZM"
-    access_token_secret = "aIawDKoNExONU980WE1BTZi4is56T40snRX7mrJR77Y"
+    access_token_key = "589408945-i6MIVAqU0RPA9UCGyqWal5yuVaFAZXm4mgie3abM"
+    access_token_secret = "8aNbIjVGf7sVMuu8GMtFAkzwUiJECujIc0EBpca0vlJ5G"
 
-    consumer_key = "hqVR1b1W4BW8yWi1pbJUp0nrm"
-    consumer_secret = "7GAbZeVv5rihyCERRB9pWNaRZHrXMPCe3NtNCKiupGzhxvZkuh"
+    consumer_key = "ChjGSpkZMeYB5BbHZc6IAmgaS"
+    consumer_secret = "hZwiESflDFkpjbXbQ6fyqnnhLCfU0OYYe70thrO4tmRUyHPP7q"
 
     _debug = 0
 

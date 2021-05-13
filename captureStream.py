@@ -1,6 +1,6 @@
 import twitterStream as t
 import os
-import httplib
+import http.client as httplib
 import time
 import threading
 
@@ -9,7 +9,7 @@ def beginStream():
     #Activate the streaming services
     try:
         stream = t.twitterStream()
-        stream.fetchsamples()
+        stream.fetchsamples(keywords)
 
     except httplib.IncompleteRead:
         pass

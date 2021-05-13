@@ -2,8 +2,7 @@ import json
 import pymongo
 import datetime
 import oauth2 as oauth
-import urllib2 as urllib
-
+import urllib.request as urllib
 
 '''
 Construct, sign, and open a twitter request
@@ -14,11 +13,11 @@ class twitterStream:
 
   def twitterreq(self, url, method, parameters):
 
-    access_token_key = "589408945-i6MIVAqU0RPA9UCGyqWal5yuVaFAZXm4mgie3abM"
-    access_token_secret = "8aNbIjVGf7sVMuu8GMtFAkzwUiJECujIc0EBpca0vlJ5G"
+    access_token_key = ""
+    access_token_secret = ""
 
-    consumer_key = "ChjGSpkZMeYB5BbHZc6IAmgaS"
-    consumer_secret = "hZwiESflDFkpjbXbQ6fyqnnhLCfU0OYYe70thrO4tmRUyHPP7q"
+    consumer_key = ""
+    consumer_secret = ""
 
     _debug = 0
 
@@ -68,7 +67,7 @@ class twitterStream:
     response = self.twitterreq(url, "GET", parameters)
 
     conn = pymongo.MongoClient('mongodb://localhost:27017')
-    db = conn.twitter
+    db = conn.sandbox
 
     for line in response:
         tweet = line.strip()

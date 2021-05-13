@@ -2,7 +2,9 @@ FROM ubuntu:16.04
 FROM python:3.6.10-buster
 FROM mongo
 
-COPY /. /.
+RUN mkdir twitter
+
+COPY /. /twitter/.
 
 RUN	apt-get update && \
     apt-get install emacs -y && \

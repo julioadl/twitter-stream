@@ -1,0 +1,12 @@
+#Ignore everything
+*
+
+#Except
+!.gitignore
+!Dockerfile
+!captureStream.py
+!requirements.txt
+!twitterStream.py
+!requestsTwitter.py
+!requestsTwitterAcademic.py
+!searchTwitter.py
